@@ -1,12 +1,14 @@
 def count_letters(text):  # TODO  Напишите функцию count_letters
-    result = dict()
-    count = 1
+    result = {}
+    count = 0
     for letter in text.lower():
-        for another_letter in text.lower():
-            if letter.isalpha() and letter == another_letter:
-                count += 1
         if letter.isalpha():
-            result[letter] = count
+            result[letter] = 0
+    for char in result:
+        for letter in text.lower():
+            if letter.isalpha() and char == letter:
+                count +=1
+            result[char] = count
             count = 0
     return result
 
@@ -16,10 +18,7 @@ def calculate_frequency(counted_letters):  # TODO Напишите функци�
     for value in counted_letters.values():
         total_count += value
     for key, value in counted_letters.items():
-        counted_letters.update(
-            {key: value / total_count
-            }
-            )
+        counted_letters.update({key: value / total_count})
     return counted_letters
 
 

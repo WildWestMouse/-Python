@@ -1,6 +1,6 @@
 def find_item_in_list(items_list, find_item):  # TODO Напишите функцию для поиска индекса товара
-    for number in range(len(items_list)):
-        if items_list[number] == find_item:
+    for number, item in enumerate(items_list):
+        if item == find_item:
             return number
     return None
 
