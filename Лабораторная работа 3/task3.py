@@ -7,9 +7,7 @@ def count_letters(text):  # TODO  Напишите функцию count_letters
     for char in result:
         for letter in text.lower():
             if letter.isalpha() and char == letter:
-                count +=1
-            result[char] = count
-            count = 0
+                result[char] += 1
     return result
 
 
